@@ -1,0 +1,8 @@
+.page-header 
+  h2
+    | Editing Item # 
+    = @purchased_item.id
+
+p = link_to "Back to purchased item list", purchased_items_path
+
+== render 'form'

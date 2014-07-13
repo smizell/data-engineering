@@ -1,0 +1,18 @@
+h2 
+  | Purchased Item 
+  = @purchased_item.id
+  small< = link_to "Edit", edit_purchased_item_path(@purchased_item)
+
+p = link_to "Back to purchased item list", purchased_items_path
+
+dl.dl-horizontal
+  dt Purchaser
+  dd = link_to @purchased_item.purchaser.name, @purchased_item.purchaser
+  dt Merchant
+  dd = link_to @purchased_item.merchant.name, @purchased_item.merchant
+  dt Description
+  dd = @purchased_item.description
+  dt Price
+  dd = number_to_currency(@purchased_item.price)
+  dt Quantity
+  dd = @purchased_item.quantity 

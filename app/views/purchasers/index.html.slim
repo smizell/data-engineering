@@ -1,0 +1,21 @@
+.col-md-8
+  h2 Purchasers
+
+  p = link_to 'New Purchaser', new_purchaser_path, class: "btn btn-sm btn-primary"
+
+  - unless @purchasers.empty?
+    table.table.table-striped
+      thead
+        tr
+          th Name
+          th Options
+
+      tbody
+        - @purchasers.each do |purchaser|
+          tr
+            td = link_to purchaser.name, purchaser
+            td 
+              span> = link_to 'Edit', edit_purchaser_path(purchaser), class: "btn btn-sm btn-default"
+              = link_to 'Destroy', purchaser, data: {:confirm => 'Are you sure?'}, class: "btn btn-sm btn-danger", :method => :delete
+  - else
+    p No purchasers yet!

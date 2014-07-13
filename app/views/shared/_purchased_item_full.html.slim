@@ -1,0 +1,28 @@
+table.table.table-striped.table-condensed.table-bordered
+  thead
+    tr
+      th Item
+      - unless type == :purchaser
+        th Purchaser
+      - unless type == :merchant
+        th Merchant
+      th.number Price
+      th.number Quantity
+      - unless type == :upload
+        th.final Upload
+      th Actions
+  tbody
+    - purchased_items.each do |item|
+      tr
+        td = item.description
+        - unless type == :purchaser
+          td = link_to item.purchaser.name, item.purchaser
+        - unless type == :merchant
+          td = link_to item.merchant.name, item.merchant
+        td.number = number_to_currency(item.price)
+        td.number = item.quantity
+        - unless type == :upload
+          td.final = item.upload ? link_to(item.upload, item.upload) : nil
+        td 
+          span> = link_to 'Edit', edit_purchased_item_path(item), class: "btn btn-sm btn-default"
+          = link_to 'Delete', item, data: {:confirm => 'Are you sure?'}, class: "btn btn-sm btn-danger", :method => :delete

@@ -1,0 +1,9 @@
+.col-md-12
+  h2 Purchased Items
+
+  p = link_to 'New Purchased Item', new_purchased_item_path, class: "btn btn-sm btn-primary"
+
+  - unless @purchased_items.empty?
+    == render "shared/purchased_item_full", purchased_items: @purchased_items, type: :purchased_item
+  - else
+    p No purchased items yet!

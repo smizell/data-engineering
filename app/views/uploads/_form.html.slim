@@ -1,0 +1,6 @@
+= form_tag(uploads_path, multipart: true, :class => "form-inline") do |f|
+  .form-group
+    label.sr-only> Upload File
+    = file_field_tag :upload_file, class: "form-control"
+  span> 
+  = submit_tag "Upload", class: "btn btn-primary"

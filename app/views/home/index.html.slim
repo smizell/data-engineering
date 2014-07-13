@@ -1,0 +1,37 @@
+.jumbotron
+  h2 LivingSocial Challenge
+  p 
+    | This app is to provide the functionality outlined in the 
+    = link_to "data engineering challenge", "https://github.com/lschallenges/data-engineering"
+    span< from LivingSocial.
+
+.col-md-12.upload-form
+  h3 Upload Purchased Items
+  == render 'uploads/form'
+
+.col-md-4
+  h3 Purchasers
+  - unless @purchasers.empty?
+    .list-group
+      - Purchaser.all.each do |purchaser|
+        = link_to purchaser.name, purchaser, class: "list-group-item"
+  - else
+    p No purchasers yet!
+
+.col-md-4
+  h3 Merchants
+  - unless @merchants.empty?
+    .list-group
+      - Merchant.all.each do |merchant|
+        = link_to merchant.name, merchant, class: "list-group-item"
+  - else
+    p No merchants yet!
+
+.col-md-4
+  h3 Uploads
+  - unless @uploads.empty?
+    .list-group
+      - Upload.all.each do |upload|
+        = link_to upload, upload, class: "list-group-item"
+  - else
+    p No uploads yet!

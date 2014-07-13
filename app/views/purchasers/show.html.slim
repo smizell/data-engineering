@@ -1,0 +1,11 @@
+.page-header
+  h2
+    | Purchaser: 
+    span> = @purchaser.name
+    small = link_to 'Edit', edit_purchaser_path(@purchaser)
+
+p = link_to "Back to purchaser list", purchasers_path
+
+h3 Items Purchased
+
+== render "shared/purchased_item_full", purchased_items: @purchaser.purchased_items, type: :purchaser

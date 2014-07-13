@@ -1,4 +1,38 @@
-# Challenge for Software Engineer - Big Data 
+# Challenge for Software Engineer - Big Data
+
+This app is for the [challenge](https://github.com/lschallenges/data-engineering) for the Software Engineer position at LivingSocial.
+
+## Usage
+
+1. Install Ruby (if not installed) version `1.9.3` or higher (`2.0.0` or above preferred). This app was built with version `2.0.0-p353`.
+2. Clone this repo with `git clone https://github.com/smizell/data-engineering.git`
+3. Navigate into the `data-engineering` directory
+4. Run from the command line `bundle install`
+5. Run from the command line `rake db:migrate`
+
+After this, you may run tests with:
+
+```bash
+$ rspec spec
+```
+
+Or run the app with:
+
+```bash
+$ rails s
+```
+
+Once running, visit `http://127.0.0.1:3000` in your browser.
+
+## Requirements
+
+The requirements from the initial README are below.
+
+1. Accept tab delimited file via a form - [Passing test](https://github.com/smizell/data-engineering/blob/master/spec/features/uploads_spec.rb#L6-L9)
+2. Parse the file, normalize the data, and store in a relational database - [Passing test](https://github.com/smizell/data-engineering/blob/master/spec/lib/upload_parser_spec.rb#L7-L14)
+2. Display total amount gross revenue represented by the uploaded file - [Passing test](https://github.com/smizell/data-engineering/blob/master/spec/features/uploads_spec.rb#L10)
+
+## Original README
 To better assess a candidates development skills, we would like to provide the following challenge.  You have as much time as you'd like (though we ask that you not spend more than a few hours).
 
 There are three jobs that both use this challenge:
@@ -8,17 +42,17 @@ There are three jobs that both use this challenge:
 
 Feel free to email the appropriate address above if you have any questions.
 
-## Submission Instructions
+### Submission Instructions
 1. First, fork this project on github.  You will need to create an account if you don't already have one.
 1. Next, complete the project as described below within your fork.
 1. Finally, push all of your changes to your fork on github and submit a pull request.  You should also email the appropriate address listed in the first section and your recruiter to let them know you have submitted a solution.  Make sure to include your github username in your email (so we can match people with pull requests).
 
-## Alternate Submission Instructions (if you don't want to publicize completing the challenge)
+### Alternate Submission Instructions (if you don't want to publicize completing the challenge)
 1. Clone the repository
 1. Next, complete your project as described below within your local repository
 1. Email a patch file to the appropriate address listed above ([data.challenge@livingsocial.com](mailto:data.challenge@livingsocial.com) if you are applying for the Big Data position, [dev.challenges@livingsocial.com](dev.challenges@livingsocial.com) if you are applying for the general Senior Software Engineer or Associate Developer position).
 
-## Project Description
+### Project Description
 Imagine that LivingSocial has just acquired a new company.  Unfortunately, the company has never stored their data in a database and instead uses a plain text file.  We need to create a way for the new subsidiary to import their data into a database.  Your task is to create a web interface that accepts file uploads, normalizes the data, and then stores it in a relational database.
 
 Here's what your web-based application must do:
@@ -35,7 +69,7 @@ Your application does not need to:
 
 Your application should be easy to set up and should run on either Linux or Mac OS X.  It should not require any for-pay software.
 
-## Evaluation
+### Evaluation
 Evaluation of your submission will be based on the following criteria. Additionally, reviewers will attempt to assess your familiarity with standard libraries. If your code submission is in Ruby, reviewers will attempt to assess your experience with object-oriented programming based on how you've structured your submission.
 
 1. Did your application fulfill the basic requirements?

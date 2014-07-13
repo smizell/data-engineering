@@ -1,0 +1,15 @@
+h2 
+  | Upload #
+  = @upload.id
+
+p = link_to 'Back to upload list', uploads_path
+
+h3 Info
+
+dl
+  dt Total Gross Revenue
+  dd = number_to_currency(@upload.total_gross_revenue)
+
+h3 Uploaded Items
+
+== render "shared/purchased_item_full", purchased_items: @upload.purchased_items, type: :upload
